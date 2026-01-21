@@ -30,13 +30,13 @@
         {
             this.ReportPanel = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.percentbox7 = new System.Windows.Forms.TextBox();
+            this.percentbox6 = new System.Windows.Forms.TextBox();
+            this.percentbox5 = new System.Windows.Forms.TextBox();
+            this.percentbox4 = new System.Windows.Forms.TextBox();
+            this.percentbox3 = new System.Windows.Forms.TextBox();
+            this.percentbox2 = new System.Windows.Forms.TextBox();
+            this.percentbox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,13 +56,13 @@
             // ReportPanel
             // 
             this.ReportPanel.Controls.Add(this.label11);
-            this.ReportPanel.Controls.Add(this.textBox7);
-            this.ReportPanel.Controls.Add(this.textBox6);
-            this.ReportPanel.Controls.Add(this.textBox5);
-            this.ReportPanel.Controls.Add(this.textBox4);
-            this.ReportPanel.Controls.Add(this.textBox3);
-            this.ReportPanel.Controls.Add(this.textBox2);
-            this.ReportPanel.Controls.Add(this.textBox1);
+            this.ReportPanel.Controls.Add(this.percentbox7);
+            this.ReportPanel.Controls.Add(this.percentbox6);
+            this.ReportPanel.Controls.Add(this.percentbox5);
+            this.ReportPanel.Controls.Add(this.percentbox4);
+            this.ReportPanel.Controls.Add(this.percentbox3);
+            this.ReportPanel.Controls.Add(this.percentbox2);
+            this.ReportPanel.Controls.Add(this.percentbox1);
             this.ReportPanel.Controls.Add(this.label10);
             this.ReportPanel.Controls.Add(this.label9);
             this.ReportPanel.Controls.Add(this.label8);
@@ -91,68 +91,68 @@
             this.label11.TabIndex = 27;
             this.label11.Text = "ราคาตามเปอร์เซ็น";
             // 
-            // textBox7
+            // percentbox7
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(793, 474);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(109, 30);
-            this.textBox7.TabIndex = 26;
+            this.percentbox7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.percentbox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentbox7.Location = new System.Drawing.Point(793, 474);
+            this.percentbox7.Name = "percentbox7";
+            this.percentbox7.Size = new System.Drawing.Size(109, 30);
+            this.percentbox7.TabIndex = 26;
             // 
-            // textBox6
+            // percentbox6
             // 
-            this.textBox6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(793, 410);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(109, 30);
-            this.textBox6.TabIndex = 25;
+            this.percentbox6.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.percentbox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentbox6.Location = new System.Drawing.Point(793, 410);
+            this.percentbox6.Name = "percentbox6";
+            this.percentbox6.Size = new System.Drawing.Size(109, 30);
+            this.percentbox6.TabIndex = 25;
             // 
-            // textBox5
+            // percentbox5
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(793, 349);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(109, 30);
-            this.textBox5.TabIndex = 24;
+            this.percentbox5.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.percentbox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentbox5.Location = new System.Drawing.Point(793, 349);
+            this.percentbox5.Name = "percentbox5";
+            this.percentbox5.Size = new System.Drawing.Size(109, 30);
+            this.percentbox5.TabIndex = 24;
             // 
-            // textBox4
+            // percentbox4
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(793, 289);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(109, 30);
-            this.textBox4.TabIndex = 23;
+            this.percentbox4.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.percentbox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentbox4.Location = new System.Drawing.Point(793, 289);
+            this.percentbox4.Name = "percentbox4";
+            this.percentbox4.Size = new System.Drawing.Size(109, 30);
+            this.percentbox4.TabIndex = 23;
             // 
-            // textBox3
+            // percentbox3
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(793, 229);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(109, 30);
-            this.textBox3.TabIndex = 22;
+            this.percentbox3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.percentbox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentbox3.Location = new System.Drawing.Point(793, 229);
+            this.percentbox3.Name = "percentbox3";
+            this.percentbox3.Size = new System.Drawing.Size(109, 30);
+            this.percentbox3.TabIndex = 22;
             // 
-            // textBox2
+            // percentbox2
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(793, 170);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(109, 30);
-            this.textBox2.TabIndex = 21;
+            this.percentbox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.percentbox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentbox2.Location = new System.Drawing.Point(793, 170);
+            this.percentbox2.Name = "percentbox2";
+            this.percentbox2.Size = new System.Drawing.Size(109, 30);
+            this.percentbox2.TabIndex = 21;
             // 
-            // textBox1
+            // percentbox1
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(793, 113);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(109, 30);
-            this.textBox1.TabIndex = 20;
+            this.percentbox1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.percentbox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentbox1.Location = new System.Drawing.Point(793, 113);
+            this.percentbox1.Name = "percentbox1";
+            this.percentbox1.Size = new System.Drawing.Size(109, 30);
+            this.percentbox1.TabIndex = 20;
             // 
             // label10
             // 
@@ -241,6 +241,7 @@
             this.initialprice.Name = "initialprice";
             this.initialprice.Size = new System.Drawing.Size(109, 41);
             this.initialprice.TabIndex = 10;
+            this.initialprice.TextChanged += new System.EventHandler(this.initialprice_TextChanged);
             // 
             // label1
             // 
@@ -298,13 +299,13 @@
 
         private System.Windows.Forms.Panel ReportPanel;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox percentbox7;
+        private System.Windows.Forms.TextBox percentbox6;
+        private System.Windows.Forms.TextBox percentbox5;
+        private System.Windows.Forms.TextBox percentbox4;
+        private System.Windows.Forms.TextBox percentbox3;
+        private System.Windows.Forms.TextBox percentbox2;
+        private System.Windows.Forms.TextBox percentbox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

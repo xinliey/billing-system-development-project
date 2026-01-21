@@ -12,19 +12,33 @@ namespace LatexApp0
 {
     public partial class reportForm : Form
     {
+        private MainReportPanel ReportTab;
+        private BillCombineControl BillCombineTab;
+        private AddNewcustomer AddCustomerTab;
+        private SearchTabUserControl searchTab;
         public reportForm()
         {
             InitializeComponent();
+            ReportTab = new MainReportPanel();
+            BillCombineTab = new BillCombineControl();
+            AddCustomerTab = new AddNewcustomer();
+            searchTab = new SearchTabUserControl();
+            LoadPage(ReportTab); //initialize tab
         }
 
         private void รวมบลToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoadPage(new BillCombineControl());
+            LoadPage(BillCombineTab);
         }
         private void รายงานToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoadPage(new MainReportPanel());
+            LoadPage(ReportTab);
         }
+
+        private void เพมลกคาToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadPage(AddCustomerTab);
+        } 
         private void LoadPage(UserControl Page)
         {
             ReportPanel.Controls.Clear();
@@ -32,9 +46,9 @@ namespace LatexApp0
             ReportPanel.Controls.Add(Page);
         }
 
-        private void เพมลกคาToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ขอมลลกคาToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LoadPage(new AddNewcustomer());
+            LoadPage(searchTab);
         }
     }
 }

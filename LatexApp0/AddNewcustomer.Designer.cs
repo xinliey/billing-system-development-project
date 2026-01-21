@@ -41,6 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.newcustomerremark = new System.Windows.Forms.TextBox();
             this.NewCustomerSaveBtn = new System.Windows.Forms.Button();
+            this.cancelbtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -174,10 +175,22 @@
             this.NewCustomerSaveBtn.UseVisualStyleBackColor = true;
             this.NewCustomerSaveBtn.Click += new System.EventHandler(this.NewCustomerSaveBtn_Click);
             // 
+            // cancelbtn
+            // 
+            this.cancelbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelbtn.Location = new System.Drawing.Point(548, 568);
+            this.cancelbtn.Name = "cancelbtn";
+            this.cancelbtn.Size = new System.Drawing.Size(140, 47);
+            this.cancelbtn.TabIndex = 20;
+            this.cancelbtn.Text = "ยกเลิก";
+            this.cancelbtn.UseVisualStyleBackColor = true;
+            this.cancelbtn.Click += new System.EventHandler(this.cancelbtn_Click);
+            // 
             // AddNewcustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.cancelbtn);
             this.Controls.Add(this.NewCustomerSaveBtn);
             this.Controls.Add(this.newcustomerremark);
             this.Controls.Add(this.label6);
@@ -213,5 +226,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox newcustomerremark;
         private System.Windows.Forms.Button NewCustomerSaveBtn;
+        private System.Windows.Forms.Button cancelbtn;
     }
 }
