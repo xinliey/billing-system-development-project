@@ -57,6 +57,9 @@ namespace LatexApp0
             percentbox5.Text = (InitPrice + 4).ToString();
             percentbox6.Text = (InitPrice + 5).ToString();
             percentbox7.Text = (InitPrice + 6).ToString();
+            percentbox8.Text = (InitPrice + 7).ToString();
+            percentbox9.Text = (InitPrice + 8).ToString();
+            percentbox10.Text = (InitPrice + 9).ToString();
         }
     }
 }

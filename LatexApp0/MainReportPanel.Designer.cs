@@ -50,11 +50,23 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.reportremark = new System.Windows.Forms.RichTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.percentbox8 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.percentbox9 = new System.Windows.Forms.TextBox();
+            this.percentbox10 = new System.Windows.Forms.TextBox();
             this.ReportPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // ReportPanel
             // 
+            this.ReportPanel.Controls.Add(this.percentbox10);
+            this.ReportPanel.Controls.Add(this.percentbox9);
+            this.ReportPanel.Controls.Add(this.label14);
+            this.ReportPanel.Controls.Add(this.label13);
+            this.ReportPanel.Controls.Add(this.percentbox8);
+            this.ReportPanel.Controls.Add(this.label12);
             this.ReportPanel.Controls.Add(this.label11);
             this.ReportPanel.Controls.Add(this.percentbox7);
             this.ReportPanel.Controls.Add(this.percentbox6);
@@ -95,7 +107,7 @@
             // 
             this.percentbox7.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.percentbox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentbox7.Location = new System.Drawing.Point(793, 474);
+            this.percentbox7.Location = new System.Drawing.Point(793, 463);
             this.percentbox7.Name = "percentbox7";
             this.percentbox7.Size = new System.Drawing.Size(109, 30);
             this.percentbox7.TabIndex = 26;
@@ -158,11 +170,11 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(664, 479);
+            this.label10.Location = new System.Drawing.Point(664, 468);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 25);
             this.label10.TabIndex = 19;
-            this.label10.Text = "41%-42%";
+            this.label10.Text = "38%-39%";
             // 
             // label9
             // 
@@ -172,7 +184,7 @@
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(99, 25);
             this.label9.TabIndex = 18;
-            this.label9.Text = "39%-40%";
+            this.label9.Text = "36%-37%";
             // 
             // label8
             // 
@@ -182,7 +194,7 @@
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 25);
             this.label8.TabIndex = 17;
-            this.label8.Text = "37%-38%";
+            this.label8.Text = "33%-35%";
             // 
             // label7
             // 
@@ -192,7 +204,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(99, 25);
             this.label7.TabIndex = 16;
-            this.label7.Text = "35%-36%";
+            this.label7.Text = "30%-32%";
             // 
             // label6
             // 
@@ -202,7 +214,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(99, 25);
             this.label6.TabIndex = 15;
-            this.label6.Text = "33%-34%";
+            this.label6.Text = "25%-29%";
             // 
             // label5
             // 
@@ -212,7 +224,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 25);
             this.label5.TabIndex = 14;
-            this.label5.Text = "31%-32%";
+            this.label5.Text = "20%-24%";
             // 
             // label4
             // 
@@ -220,9 +232,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(664, 118);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(52, 25);
+            this.label4.Size = new System.Drawing.Size(97, 25);
             this.label4.TabIndex = 13;
-            this.label4.Text = "30%";
+            this.label4.Text = "ต่ำกว่า20%";
             // 
             // datetime
             // 
@@ -282,6 +294,63 @@
             this.reportremark.TabIndex = 12;
             this.reportremark.Text = "สวัสดี";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(664, 521);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(52, 25);
+            this.label12.TabIndex = 28;
+            this.label12.Text = "40%";
+            // 
+            // percentbox8
+            // 
+            this.percentbox8.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.percentbox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentbox8.Location = new System.Drawing.Point(793, 516);
+            this.percentbox8.Name = "percentbox8";
+            this.percentbox8.Size = new System.Drawing.Size(109, 30);
+            this.percentbox8.TabIndex = 29;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(664, 573);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(52, 25);
+            this.label13.TabIndex = 30;
+            this.label13.Text = "41%";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(664, 625);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 25);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "42%";
+            // 
+            // percentbox9
+            // 
+            this.percentbox9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.percentbox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentbox9.Location = new System.Drawing.Point(793, 570);
+            this.percentbox9.Name = "percentbox9";
+            this.percentbox9.Size = new System.Drawing.Size(109, 30);
+            this.percentbox9.TabIndex = 32;
+            // 
+            // percentbox10
+            // 
+            this.percentbox10.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.percentbox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentbox10.Location = new System.Drawing.Point(793, 625);
+            this.percentbox10.Name = "percentbox10";
+            this.percentbox10.Size = new System.Drawing.Size(109, 30);
+            this.percentbox10.TabIndex = 33;
+            // 
             // MainReportPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -319,5 +388,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RichTextBox reportremark;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox percentbox8;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox percentbox10;
+        private System.Windows.Forms.TextBox percentbox9;
+        private System.Windows.Forms.Label label14;
     }
 }
