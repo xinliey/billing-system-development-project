@@ -11,8 +11,10 @@ using System.Windows.Forms;
 
 namespace LatexApp0
 {
-    public partial class SearchTabUserControl : UserControl
+    public partial class SearchTabUserControl : System.Windows.Forms.UserControl
     {
+
+        public Button SearchButton => button1;
         public SearchTabUserControl()
         {
             InitializeComponent();
@@ -50,34 +52,46 @@ namespace LatexApp0
                         int transportFee = Convert.ToInt32(reader["Transport_fee"]);
                         string billing = reader["Preferred_billing"].ToString();
                         int? unpaidValue = ReadIntOrNull(reader, "unpaid");
-                        string unpaidText = unpaidValue.HasValue ? unpaidValue.Value.ToString() : "no data";
+                        string unpaidText = unpaidValue.HasValue ? unpaidValue.Value.ToString() : "ไม่มีข้อมูล";
 
                         string remark = ReadStringOrNoData(reader, "remark");
 
-                        
+
                         int? percent1 = ReadIntOrNull(reader, "percentage1");
-                        string pc1Text = percent1.HasValue ? percent1.Value.ToString() : "no data";
-                        string date1 = reader["date"].ToString();
+                        string pc1Text = percent1.HasValue ? percent1.Value.ToString() : "ไม่มีข้อมูล";
+                        string remark1 = ReadStringOrNoData(reader, "remark1");
+                        string date1 = ReadDateOrNoData(reader, "date"); 
                         int? percent2 = ReadIntOrNull(reader, "precentage2");
-                        string pc2Text = percent2.HasValue ? percent2.Value.ToString() : "no data";
-                        string date2 = reader["date2"].ToString();
-                        int? percent3 = ReadIntOrNull(reader, "precentage2");
-                        string pc3Text = percent2.HasValue ? percent2.Value.ToString() : "no data";
-                        string date3 = reader["date3"].ToString();
-                        DisplayClientInfo(name, employee, transportFee, billing,unpaidText,remark,date1,pc1Text,date2,pc2Text,date3,pc3Text);
+                        string pc2Text = percent2.HasValue ? percent2.Value.ToString() : "ไม่มีข้อมูล";
+                        string date2 = ReadDateOrNoData(reader, "date2");
+                        string remark2 = ReadStringOrNoData(reader, "remark2");
+                        int? percent3 = ReadIntOrNull(reader, "percentage3");
+                        string pc3Text = percent3.HasValue ? percent3.Value.ToString() : "ไม่มีข้อมูล";
+                        string date3 = ReadDateOrNoData(reader, "date3");
+                        string remark3 = ReadStringOrNoData(reader, "remark3");
+
+                        DisplayClientInfo(name, employee, transportFee, billing, unpaidText, remark, date1, pc1Text,remark1, date2, pc2Text,remark2, date3, pc3Text,remark3);
                     }
                     else
                     {
                         searchreporttextbox.Clear();
-                        searchreporttextbox.Text = "ไม่พบข้อมูล";
+                        searchreporttextbox.Text = "ไม่มีข้อมูล";
                     }
                 }
             }
+
+        }
+        private string ReadDateOrNoData(MySqlDataReader reader, string columnName)
+        {
+            if (reader[columnName] == DBNull.Value)
+                return "ไม่มีข้อมูล";
+
+            return Convert.ToDateTime(reader[columnName]).ToString("yyyy/M/d");
         }
         private string ReadStringOrNoData(MySqlDataReader reader, string columnName)
         {
             return reader[columnName] == DBNull.Value
-                ? "ไม่มี"
+                ? "-"
                 : reader[columnName].ToString();
         }
 
@@ -88,7 +102,7 @@ namespace LatexApp0
                 : Convert.ToInt32(reader[columnName]);
         }
         private void DisplayClientInfo(string name, string employee, int transportFee, string billing,string unpaid,string remark
-            ,string date1, string pc1text,string date2,string pc2text,string date3 , string pc3text)
+            ,string date1, string pc1text,string remark1,string date2,string pc2text, string remark2,string date3 , string pc3text, string remark3)
         {
             var sb = new StringBuilder();
             string carfeetostring;
@@ -108,9 +122,24 @@ namespace LatexApp0
             sb.AppendLine($"แบ่ง    : {billing}");
             sb.AppendLine($"ยอดค้าง  : {unpaid}");
             sb.AppendLine($"หมายเหตุ : {remark}");
-            sb.AppendLine($"{date1}: {pc1text}");
-            sb.AppendLine($"{date2}: {pc2text}");
-            sb.AppendLine($"{date3}: {pc3text}");
+            sb.AppendLine("----------------------------");
+            sb.AppendLine("เปอร์เซ็นย้อนหลัง3งัน");
+            sb.AppendLine("วันที่".PadRight(20) + "เปอร์เซ็น".PadRight(18) + "หมายเหตุ");
+            sb.AppendLine(
+                date1.PadRight(16) +
+                pc1text.PadRight(18) +
+                remark1
+            );
+            sb.AppendLine(
+                date2.PadRight(16) +
+                pc2text.PadRight(18) +
+                remark2
+            );
+            sb.AppendLine(
+                date3.PadRight(16) +
+                pc3text.PadRight(18) +
+                remark3
+            );
             searchreporttextbox.Clear();
             searchreporttextbox.Text = sb.ToString();
         }

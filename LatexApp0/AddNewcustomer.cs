@@ -13,7 +13,7 @@ using MySql.Data.MySqlClient;
 namespace LatexApp0
 {
 
-    public partial class AddNewcustomer : UserControl
+    public partial class AddNewcustomer : System.Windows.Forms.UserControl
     {
         /*cmd for sql : INSERT INTO `latexapp`.`client_data` 
          * (`Name`, `employee`, `Transport_fee`,`Preferred_billing`) VALUES ('', '', '0','60_40');*/

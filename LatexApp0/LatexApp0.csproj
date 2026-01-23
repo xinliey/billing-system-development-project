@@ -135,6 +135,12 @@
     <Compile Include="SearchTabUserControl.Designer.cs">
       <DependentUpon>SearchTabUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="RecordSearchUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecordSearchUserControl.Designer.cs">
+      <DependentUpon>RecordSearchUserControl.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddNewcustomer.resx">
       <DependentUpon>AddNewcustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RecordSearchUserControl.resx">
+      <DependentUpon>RecordSearchUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SearchTabUserControl.resx">
       <DependentUpon>SearchTabUserControl.cs</DependentUpon>

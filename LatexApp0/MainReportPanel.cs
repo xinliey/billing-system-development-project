@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LatexApp0
 {
-    public partial class MainReportPanel : UserControl
+    public partial class MainReportPanel : System.Windows.Forms.UserControl
     {
         int InitPrice;
         public int[] PercentPrices => new int[]// alow acess from other tab

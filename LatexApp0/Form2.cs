@@ -16,6 +16,7 @@ namespace LatexApp0
         private BillCombineControl BillCombineTab;
         private AddNewcustomer AddCustomerTab;
         private SearchTabUserControl searchTab;
+        private RecordSearchUserControl billsearch;
         public reportForm()
         {
             InitializeComponent();
@@ -23,7 +24,10 @@ namespace LatexApp0
             BillCombineTab = new BillCombineControl();
             AddCustomerTab = new AddNewcustomer();
             searchTab = new SearchTabUserControl();
+            billsearch = new RecordSearchUserControl();
+
             LoadPage(ReportTab); //initialize tab
+            
         }
 
         private void รวมบลToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,7 +43,7 @@ namespace LatexApp0
         {
             LoadPage(AddCustomerTab);
         } 
-        private void LoadPage(UserControl Page)
+        private void LoadPage(System.Windows.Forms.UserControl Page)
         {
             ReportPanel.Controls.Clear();
             Page.Dock = DockStyle.Fill;
@@ -49,6 +53,17 @@ namespace LatexApp0
         private void ขอมลลกคาToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadPage(searchTab);
+            this.AcceptButton = searchTab.SearchButton;
+        }
+
+        private void initialprice_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void ประวตบลToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadPage(billsearch);
         }
     }
 }

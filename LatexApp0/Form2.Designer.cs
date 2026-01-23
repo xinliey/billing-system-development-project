@@ -79,6 +79,7 @@
             this.initialprice.Name = "initialprice";
             this.initialprice.Size = new System.Drawing.Size(109, 41);
             this.initialprice.TabIndex = 10;
+            this.initialprice.TextChanged += new System.EventHandler(this.initialprice_TextChanged);
             // 
             // label2
             // 
@@ -342,7 +343,7 @@
             // 
             this.ขอมลลกคาToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ขอมลลกคาToolStripMenuItem.Name = "ขอมลลกคาToolStripMenuItem";
-            this.ขอมลลกคาToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.ขอมลลกคาToolStripMenuItem.Size = new System.Drawing.Size(205, 36);
             this.ขอมลลกคาToolStripMenuItem.Text = "ข้อมูลลูกค้า";
             this.ขอมลลกคาToolStripMenuItem.Click += new System.EventHandler(this.ขอมลลกคาToolStripMenuItem_Click);
             // 
@@ -352,6 +353,7 @@
             this.ประวตบลToolStripMenuItem.Name = "ประวตบลToolStripMenuItem";
             this.ประวตบลToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
             this.ประวตบลToolStripMenuItem.Text = "ประวัติบิล";
+            this.ประวตบลToolStripMenuItem.Click += new System.EventHandler(this.ประวตบลToolStripMenuItem_Click);
             // 
             // reportForm
             // 
