@@ -40,6 +40,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.totaldrycost = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -153,11 +154,23 @@
             this.totaldrycost.Size = new System.Drawing.Size(204, 38);
             this.totaldrycost.TabIndex = 11;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label7.Location = new System.Drawing.Point(406, 407);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(528, 29);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "under development , pls manually enter dry latex";
+            // 
             // BillCombineControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.totaldrycost);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.button1);
@@ -191,5 +204,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox totaldrycost;
+        private System.Windows.Forms.Label label7;
     }
 }

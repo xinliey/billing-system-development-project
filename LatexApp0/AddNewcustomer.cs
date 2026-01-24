@@ -81,14 +81,14 @@ namespace LatexApp0
                     conn.Open();
                     cmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Customer saved successfully!");
+                    MessageBox.Show("บันทึกช้อมูลสำเร็จ!");
                 }
             }
             catch (MySqlException ex) when (ex.Number == 1062)
             {
                 MessageBox.Show(
-                    "This customer already exists.\nPlease use a different name.",
-                    "Duplicate Customer",
+                    "มีลูกค้าชื่อนี้แล้ว.\nPlease กรุณาเปลี่ยนชื่อ.",
+                    "มีลูกค้าชื่อนี้แล้ว",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning
                 );

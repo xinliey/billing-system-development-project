@@ -33,7 +33,9 @@ namespace LatexApp0
          "User ID=root;" +
          "Password=131001;";
             string sql = "SELECT SUM(net_weight) AS totalweight,SUM(TransportFee) AS totalcar," +
-                "SUM(cost) AS totalcost , SUM(TransportFee + cost) AS total_payment FROM latexapp.daily_data;";
+                "SUM(cost) AS totalcost , SUM(TransportFee + cost) AS total_payment " +
+                "FROM latexapp.daily_data " +
+                "WHERE date = CURDATE();";
             using (var conn = new MySqlConnection(connString))
             using (var cmd = new MySqlCommand(sql, conn))
             {
