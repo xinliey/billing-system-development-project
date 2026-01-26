@@ -17,6 +17,7 @@ namespace LatexApp0
         private AddNewcustomer AddCustomerTab;
         private SearchTabUserControl searchTab;
         private RecordSearchUserControl billsearch;
+        
         public reportForm()
         {
             InitializeComponent();

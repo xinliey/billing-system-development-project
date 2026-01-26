@@ -13,19 +13,11 @@ namespace LatexApp0
     public partial class MainReportPanel : System.Windows.Forms.UserControl
     {
         int InitPrice;
-        public int[] PercentPrices => new int[]// alow acess from other tab
-    {
-        int.Parse(percentbox1.Text),
-        int.Parse(percentbox2.Text),
-        int.Parse(percentbox3.Text),
-        int.Parse(percentbox4.Text),
-        int.Parse(percentbox5.Text),
-        int.Parse(percentbox6.Text),
-        int.Parse(percentbox7.Text)
-    };
+       
         public MainReportPanel()
         {
             InitializeComponent();
+            
         }
         private void initialprice_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -38,8 +30,10 @@ namespace LatexApp0
 
         private void initialprice_TextChanged(object sender, EventArgs e)
         {
+
             if (int.TryParse(initialprice.Text, out int value))
             {
+                
                 InitPrice = value;
                 UpdatePrice();
             }
@@ -50,6 +44,13 @@ namespace LatexApp0
         }
         private void UpdatePrice()
         {
+            var prices = AppState.Instance.PercentPrices;
+            prices.Clear();
+            for (int i = 0; i < 10; i++)
+            {
+                prices.Add(InitPrice + i);
+            }
+
             percentbox1.Text = InitPrice.ToString();
             percentbox2.Text = (InitPrice + 1).ToString();
             percentbox3.Text = (InitPrice + 2).ToString();
@@ -60,6 +61,13 @@ namespace LatexApp0
             percentbox8.Text = (InitPrice + 7).ToString();
             percentbox9.Text = (InitPrice + 8).ToString();
             percentbox10.Text = (InitPrice + 9).ToString();
+
+
+          
+          
         }
+
+
     }
+    
 }
