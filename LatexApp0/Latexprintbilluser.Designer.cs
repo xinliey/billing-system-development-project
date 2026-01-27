@@ -35,8 +35,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.bossdvdtext = new System.Windows.Forms.Label();
+            this.employeedvdtext = new System.Windows.Forms.Label();
             this.latexweight = new System.Windows.Forms.TextBox();
             this.bucketweight = new System.Windows.Forms.TextBox();
             this.netweightforbill = new System.Windows.Forms.TextBox();
@@ -51,11 +51,16 @@
             this.percentrecorddisplay = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.latexafterdry = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.carfeetext = new System.Windows.Forms.Label();
+            this.carfeetextbx = new System.Windows.Forms.TextBox();
             this.nameforbill = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
+            this.bossdvd = new System.Windows.Forms.Label();
+            this.emplydvd = new System.Windows.Forms.Label();
+            this.remarkbill = new System.Windows.Forms.Label();
+            this.remarkbilltextbx = new System.Windows.Forms.RichTextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -72,7 +77,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(481, 126);
+            this.label3.Location = new System.Drawing.Point(340, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 36);
             this.label3.TabIndex = 2;
@@ -92,7 +97,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(19, 304);
+            this.label5.Location = new System.Drawing.Point(19, 298);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(127, 36);
             this.label5.TabIndex = 4;
@@ -102,7 +107,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 494);
+            this.label6.Location = new System.Drawing.Point(340, 388);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(73, 36);
             this.label6.TabIndex = 5;
@@ -112,47 +117,47 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(481, 494);
+            this.label7.Location = new System.Drawing.Point(19, 489);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 36);
             this.label7.TabIndex = 6;
             this.label7.Text = "เป็นเงิน";
             // 
-            // label8
+            // bossdvdtext
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(19, 594);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(90, 36);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "เถ้าแก่";
+            this.bossdvdtext.AutoSize = true;
+            this.bossdvdtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bossdvdtext.Location = new System.Drawing.Point(19, 655);
+            this.bossdvdtext.Name = "bossdvdtext";
+            this.bossdvdtext.Size = new System.Drawing.Size(90, 36);
+            this.bossdvdtext.TabIndex = 7;
+            this.bossdvdtext.Text = "เถ้าแก่";
             // 
-            // label9
+            // employeedvdtext
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(481, 589);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(98, 36);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "ลูกน้อง";
+            this.employeedvdtext.AutoSize = true;
+            this.employeedvdtext.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeedvdtext.Location = new System.Drawing.Point(19, 729);
+            this.employeedvdtext.Name = "employeedvdtext";
+            this.employeedvdtext.Size = new System.Drawing.Size(98, 36);
+            this.employeedvdtext.TabIndex = 8;
+            this.employeedvdtext.Text = "ลูกน้อง";
             // 
             // latexweight
             // 
             this.latexweight.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.latexweight.Location = new System.Drawing.Point(188, 121);
             this.latexweight.Name = "latexweight";
-            this.latexweight.Size = new System.Drawing.Size(241, 41);
+            this.latexweight.Size = new System.Drawing.Size(130, 41);
             this.latexweight.TabIndex = 1;
             this.latexweight.TextChanged += new System.EventHandler(this.latexweight_TextChanged);
             // 
             // bucketweight
             // 
             this.bucketweight.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bucketweight.Location = new System.Drawing.Point(598, 121);
+            this.bucketweight.Location = new System.Drawing.Point(425, 121);
             this.bucketweight.Name = "bucketweight";
-            this.bucketweight.Size = new System.Drawing.Size(241, 41);
+            this.bucketweight.Size = new System.Drawing.Size(112, 41);
             this.bucketweight.TabIndex = 2;
             this.bucketweight.TextChanged += new System.EventHandler(this.bucketweight_TextChanged);
             // 
@@ -162,15 +167,15 @@
             this.netweightforbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.netweightforbill.Location = new System.Drawing.Point(188, 209);
             this.netweightforbill.Name = "netweightforbill";
-            this.netweightforbill.Size = new System.Drawing.Size(241, 41);
+            this.netweightforbill.Size = new System.Drawing.Size(349, 41);
             this.netweightforbill.TabIndex = 11;
             // 
             // percentforbill
             // 
             this.percentforbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentforbill.Location = new System.Drawing.Point(188, 301);
+            this.percentforbill.Location = new System.Drawing.Point(188, 295);
             this.percentforbill.Name = "percentforbill";
-            this.percentforbill.Size = new System.Drawing.Size(241, 41);
+            this.percentforbill.Size = new System.Drawing.Size(349, 41);
             this.percentforbill.TabIndex = 3;
             this.percentforbill.TextChanged += new System.EventHandler(this.percentforbill_TextChanged);
             // 
@@ -178,25 +183,25 @@
             // 
             this.priceforbill.BackColor = System.Drawing.SystemColors.Control;
             this.priceforbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.priceforbill.Location = new System.Drawing.Point(188, 491);
+            this.priceforbill.Location = new System.Drawing.Point(425, 383);
             this.priceforbill.Name = "priceforbill";
-            this.priceforbill.Size = new System.Drawing.Size(241, 41);
+            this.priceforbill.Size = new System.Drawing.Size(112, 41);
             this.priceforbill.TabIndex = 13;
             // 
             // totalforbill
             // 
-            this.totalforbill.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.totalforbill.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.totalforbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalforbill.Location = new System.Drawing.Point(598, 491);
+            this.totalforbill.Location = new System.Drawing.Point(188, 486);
             this.totalforbill.Name = "totalforbill";
-            this.totalforbill.Size = new System.Drawing.Size(241, 41);
+            this.totalforbill.Size = new System.Drawing.Size(349, 41);
             this.totalforbill.TabIndex = 14;
             // 
             // bossdivisionforbill
             // 
             this.bossdivisionforbill.BackColor = System.Drawing.SystemColors.Control;
             this.bossdivisionforbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bossdivisionforbill.Location = new System.Drawing.Point(188, 589);
+            this.bossdivisionforbill.Location = new System.Drawing.Point(188, 652);
             this.bossdivisionforbill.Name = "bossdivisionforbill";
             this.bossdivisionforbill.Size = new System.Drawing.Size(241, 41);
             this.bossdivisionforbill.TabIndex = 15;
@@ -205,7 +210,7 @@
             // 
             this.employeedivisionforbill.BackColor = System.Drawing.SystemColors.Control;
             this.employeedivisionforbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeedivisionforbill.Location = new System.Drawing.Point(598, 586);
+            this.employeedivisionforbill.Location = new System.Drawing.Point(188, 727);
             this.employeedivisionforbill.Name = "employeedivisionforbill";
             this.employeedivisionforbill.Size = new System.Drawing.Size(241, 41);
             this.employeedivisionforbill.TabIndex = 16;
@@ -213,7 +218,7 @@
             // save_latex_btn
             // 
             this.save_latex_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save_latex_btn.Location = new System.Drawing.Point(487, 752);
+            this.save_latex_btn.Location = new System.Drawing.Point(239, 842);
             this.save_latex_btn.Name = "save_latex_btn";
             this.save_latex_btn.Size = new System.Drawing.Size(174, 49);
             this.save_latex_btn.TabIndex = 17;
@@ -224,7 +229,7 @@
             // save_latex_print_btn
             // 
             this.save_latex_print_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.save_latex_print_btn.Location = new System.Drawing.Point(699, 752);
+            this.save_latex_print_btn.Location = new System.Drawing.Point(425, 842);
             this.save_latex_print_btn.Name = "save_latex_print_btn";
             this.save_latex_print_btn.Size = new System.Drawing.Size(174, 49);
             this.save_latex_print_btn.TabIndex = 18;
@@ -237,7 +242,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(509, 821);
+            this.label10.Location = new System.Drawing.Point(623, 854);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(330, 29);
             this.label10.TabIndex = 19;
@@ -246,19 +251,18 @@
             // percentrecorddisplay
             // 
             this.percentrecorddisplay.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.percentrecorddisplay.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.percentrecorddisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentrecorddisplay.Location = new System.Drawing.Point(188, 368);
+            this.percentrecorddisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.percentrecorddisplay.Location = new System.Drawing.Point(611, 166);
             this.percentrecorddisplay.Name = "percentrecorddisplay";
-            this.percentrecorddisplay.Size = new System.Drawing.Size(672, 77);
+            this.percentrecorddisplay.Size = new System.Drawing.Size(322, 317);
             this.percentrecorddisplay.TabIndex = 20;
-            this.percentrecorddisplay.Text = "rrecord will be here";
+            this.percentrecorddisplay.Text = "";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(481, 306);
+            this.label11.Location = new System.Drawing.Point(19, 388);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(66, 36);
             this.label11.TabIndex = 21;
@@ -268,29 +272,29 @@
             // 
             this.latexafterdry.BackColor = System.Drawing.SystemColors.Control;
             this.latexafterdry.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.latexafterdry.Location = new System.Drawing.Point(598, 301);
+            this.latexafterdry.Location = new System.Drawing.Point(188, 383);
             this.latexafterdry.Name = "latexafterdry";
-            this.latexafterdry.Size = new System.Drawing.Size(241, 41);
+            this.latexafterdry.Size = new System.Drawing.Size(130, 41);
             this.latexafterdry.TabIndex = 22;
             // 
-            // label12
+            // carfeetext
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(19, 694);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(76, 36);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "ค่ารถ";
+            this.carfeetext.AutoSize = true;
+            this.carfeetext.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carfeetext.Location = new System.Drawing.Point(19, 547);
+            this.carfeetext.Name = "carfeetext";
+            this.carfeetext.Size = new System.Drawing.Size(76, 36);
+            this.carfeetext.TabIndex = 23;
+            this.carfeetext.Text = "ค่ารถ";
             // 
-            // textBox1
+            // carfeetextbx
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(188, 691);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(241, 41);
-            this.textBox1.TabIndex = 24;
+            this.carfeetextbx.BackColor = System.Drawing.SystemColors.Control;
+            this.carfeetextbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.carfeetextbx.Location = new System.Drawing.Point(188, 547);
+            this.carfeetextbx.Name = "carfeetextbx";
+            this.carfeetextbx.Size = new System.Drawing.Size(140, 38);
+            this.carfeetextbx.TabIndex = 24;
             // 
             // nameforbill
             // 
@@ -317,14 +321,69 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "ชื่อ";
             // 
+            // bossdvd
+            // 
+            this.bossdvd.AutoSize = true;
+            this.bossdvd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bossdvd.Location = new System.Drawing.Point(111, 662);
+            this.bossdvd.Name = "bossdvd";
+            this.bossdvd.Size = new System.Drawing.Size(61, 29);
+            this.bossdvd.TabIndex = 28;
+            this.bossdvd.Text = "50%";
+            // 
+            // emplydvd
+            // 
+            this.emplydvd.AutoSize = true;
+            this.emplydvd.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emplydvd.Location = new System.Drawing.Point(111, 736);
+            this.emplydvd.Name = "emplydvd";
+            this.emplydvd.Size = new System.Drawing.Size(61, 29);
+            this.emplydvd.TabIndex = 29;
+            this.emplydvd.Text = "50%";
+            // 
+            // remarkbill
+            // 
+            this.remarkbill.AutoSize = true;
+            this.remarkbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remarkbill.Location = new System.Drawing.Point(605, 486);
+            this.remarkbill.Name = "remarkbill";
+            this.remarkbill.Size = new System.Drawing.Size(125, 36);
+            this.remarkbill.TabIndex = 30;
+            this.remarkbill.Text = "หมายเหตุ";
+            // 
+            // remarkbilltextbx
+            // 
+            this.remarkbilltextbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remarkbilltextbx.ForeColor = System.Drawing.Color.Red;
+            this.remarkbilltextbx.Location = new System.Drawing.Point(611, 533);
+            this.remarkbilltextbx.Name = "remarkbilltextbx";
+            this.remarkbilltextbx.Size = new System.Drawing.Size(322, 271);
+            this.remarkbilltextbx.TabIndex = 31;
+            this.remarkbilltextbx.Text = "";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(605, 121);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(205, 36);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "ประวัติเปอร์เซ็น";
+            // 
             // Latexprintbilluser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.remarkbilltextbx);
+            this.Controls.Add(this.remarkbill);
+            this.Controls.Add(this.emplydvd);
+            this.Controls.Add(this.bossdvd);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nameforbill);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.carfeetextbx);
+            this.Controls.Add(this.carfeetext);
             this.Controls.Add(this.latexafterdry);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.percentrecorddisplay);
@@ -339,8 +398,8 @@
             this.Controls.Add(this.netweightforbill);
             this.Controls.Add(this.bucketweight);
             this.Controls.Add(this.latexweight);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.employeedvdtext);
+            this.Controls.Add(this.bossdvdtext);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -348,7 +407,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "Latexprintbilluser";
-            this.Size = new System.Drawing.Size(976, 884);
+            this.Size = new System.Drawing.Size(976, 956);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,8 +420,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label bossdvdtext;
+        private System.Windows.Forms.Label employeedvdtext;
         private System.Windows.Forms.TextBox latexweight;
         private System.Windows.Forms.TextBox bucketweight;
         private System.Windows.Forms.TextBox netweightforbill;
@@ -377,10 +436,15 @@
         private System.Windows.Forms.RichTextBox percentrecorddisplay;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox latexafterdry;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label carfeetext;
+        private System.Windows.Forms.TextBox carfeetextbx;
         private System.Windows.Forms.TextBox nameforbill;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label bossdvd;
+        private System.Windows.Forms.Label emplydvd;
+        private System.Windows.Forms.Label remarkbill;
+        private System.Windows.Forms.RichTextBox remarkbilltextbx;
+        private System.Windows.Forms.Label label8;
     }
 }

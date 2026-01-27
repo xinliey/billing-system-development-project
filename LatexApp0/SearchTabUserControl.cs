@@ -132,5 +132,10 @@ namespace LatexApp0
             searchreporttextbox.Clear();
             searchreporttextbox.Text = sb.ToString();
         }
+
+        private void SearchNameText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -53,6 +53,7 @@
             this.SearchNameText.Name = "SearchNameText";
             this.SearchNameText.Size = new System.Drawing.Size(599, 38);
             this.SearchNameText.TabIndex = 3;
+            this.SearchNameText.TextChanged += new System.EventHandler(this.SearchNameText_TextChanged);
             // 
             // searchreporttextbox
             // 
