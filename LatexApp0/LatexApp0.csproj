@@ -98,6 +98,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppState.cs" />
+    <Compile Include="EditCustomerUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="EditCustomerUserControl.Designer.cs">
+      <DependentUpon>EditCustomerUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     <Compile Include="Latexprintbilluser.Designer.cs">
       <DependentUpon>Latexprintbilluser.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditCustomerUserControl.resx">
+      <DependentUpon>EditCustomerUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

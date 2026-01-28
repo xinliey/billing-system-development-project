@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -188,12 +189,13 @@ namespace LatexApp0
                "Database=latexapp;" +
                "User ID=root;" +
                "Password=131001;";
-            string sql = @"INSERT INTO client_percentage_record
-        (Name, date, netweight, percentage, remark1)
-      VALUES
-        (@Name, @Date, @NetW, @Percent, @Remark);"; 
+            string sql = @"INSERT INTO latexapp.client_percentage_record (Name, date, netweight, percentage)
+            VALUES (@Name, @Date, @Netw, @Percent)
+            AS new ON DUPLICATE KEY UPDATE netweight  = new.netweight, percentage = new.percentage;" ;
+            string sql2 = "UPDATE client_data SET remark = @RemarkData " +
+                "WHERE Name = @Name; ";
 
-    
+
             using (var conn = new MySqlConnection(connString))
             using (var cmd = new MySqlCommand(sql, conn))
             {
@@ -201,21 +203,34 @@ namespace LatexApp0
                 cmd.Parameters.AddWithValue("@Date", DateTime.Today);
                 cmd.Parameters.AddWithValue("@Netw", netweight);
 
-                cmd.Parameters.AddWithValue("@Percent", percentforbill.Text);//still need to figure out if i should add more database for dry latex
-                cmd.Parameters.AddWithValue("@Remark", "not yet" );
+                cmd.Parameters.AddWithValue("@Percent", percentforbill.Text);
+                //cmd.Parameters.AddWithValue("@Remark", remarktextbox.Text );
 
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
-
-            MessageBox.Show("บันทึกข้อมูลสำเร็จ!");
+            if (remarktextbox != null) //if remark is null , keep the remark from previous data
+            {
+                using (var conn = new MySqlConnection(connString))
+                using (var cmd = new MySqlCommand(sql2, conn))
+                {
+                    remarkbilltextbx.Clear();
+                    cmd.Parameters.AddWithValue("@Name", nameforbill.Text);
+                    cmd.Parameters.AddWithValue("@RemarkData", remarktextbox.Text);
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
+           
+                MessageBox.Show("บันทึกข้อมูลสำเร็จ!");
 
             
                     latexweight.Clear();
                     bucketweight.Clear();
                     percentforbill.Clear();
                     nameforbill.Clear();
-
+                    remarktextbox.Clear();
+                    remarkbilltextbx.Clear();
                     percentrecorddisplay.Clear();
                 
 
@@ -273,6 +288,7 @@ namespace LatexApp0
                 {
                     remarkbill.Visible = true;
                     remarkbilltextbx.Visible = true;
+                    remarkbilltextbx.Clear();
                     remarkbilltextbx.AppendText($"{remarkText}\n");
                 }
 

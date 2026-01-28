@@ -103,5 +103,10 @@ namespace LatexApp0
             CarFee.Checked = false;
             preferred_payment.SelectedItem = "100";
         }
+
+        private void CarFee_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

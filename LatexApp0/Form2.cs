@@ -17,7 +17,7 @@ namespace LatexApp0
         private AddNewcustomer AddCustomerTab;
         private SearchTabUserControl searchTab;
         private RecordSearchUserControl billsearch;
-        
+        private EditCustomerUserControl edit;
         public reportForm()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace LatexApp0
             AddCustomerTab = new AddNewcustomer();
             searchTab = new SearchTabUserControl();
             billsearch = new RecordSearchUserControl();
-
+            edit = new EditCustomerUserControl();
             LoadPage(ReportTab); //initialize tab
             
         }
@@ -65,6 +65,16 @@ namespace LatexApp0
         private void ประวตบลToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadPage(billsearch);
+        }
+
+        private void เพมลกคาToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LoadPage(AddCustomerTab);
+        }
+
+        private void แกไขขอมลToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoadPage(edit);
         }
     }
 }

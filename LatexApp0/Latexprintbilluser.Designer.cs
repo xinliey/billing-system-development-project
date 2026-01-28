@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,13 +53,14 @@
             this.carfeetext = new System.Windows.Forms.Label();
             this.carfeetextbx = new System.Windows.Forms.TextBox();
             this.nameforbill = new System.Windows.Forms.TextBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.bossdvd = new System.Windows.Forms.Label();
             this.emplydvd = new System.Windows.Forms.Label();
             this.remarkbill = new System.Windows.Forms.Label();
             this.remarkbilltextbx = new System.Windows.Forms.RichTextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.remarktextbox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -305,12 +305,6 @@
             this.nameforbill.TabIndex = 25;
             this.nameforbill.TextChanged += new System.EventHandler(this.nameforbill_TextChanged);
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -345,19 +339,21 @@
             // 
             this.remarkbill.AutoSize = true;
             this.remarkbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remarkbill.Location = new System.Drawing.Point(605, 486);
+            this.remarkbill.Location = new System.Drawing.Point(605, 491);
             this.remarkbill.Name = "remarkbill";
-            this.remarkbill.Size = new System.Drawing.Size(125, 36);
+            this.remarkbill.Size = new System.Drawing.Size(66, 36);
             this.remarkbill.TabIndex = 30;
-            this.remarkbill.Text = "หมายเหตุ";
+            this.remarkbill.Text = "โน้ต";
             // 
             // remarkbilltextbx
             // 
+            this.remarkbilltextbx.BackColor = System.Drawing.SystemColors.Menu;
+            this.remarkbilltextbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.remarkbilltextbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remarkbilltextbx.ForeColor = System.Drawing.Color.Red;
             this.remarkbilltextbx.Location = new System.Drawing.Point(611, 533);
             this.remarkbilltextbx.Name = "remarkbilltextbx";
-            this.remarkbilltextbx.Size = new System.Drawing.Size(322, 271);
+            this.remarkbilltextbx.Size = new System.Drawing.Size(322, 88);
             this.remarkbilltextbx.TabIndex = 31;
             this.remarkbilltextbx.Text = "";
             // 
@@ -371,10 +367,34 @@
             this.label8.TabIndex = 32;
             this.label8.Text = "ประวัติเปอร์เซ็น";
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(605, 639);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(125, 36);
+            this.label9.TabIndex = 33;
+            this.label9.Text = "หมายเหตุ";
+            // 
+            // remarktextbox
+            // 
+            this.remarktextbox.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.remarktextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.remarktextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remarktextbox.ForeColor = System.Drawing.Color.Red;
+            this.remarktextbox.Location = new System.Drawing.Point(611, 678);
+            this.remarktextbox.Name = "remarktextbox";
+            this.remarktextbox.Size = new System.Drawing.Size(322, 116);
+            this.remarktextbox.TabIndex = 34;
+            this.remarktextbox.Text = "";
+            // 
             // Latexprintbilluser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.remarktextbox);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.remarkbilltextbx);
             this.Controls.Add(this.remarkbill);
@@ -439,12 +459,13 @@
         private System.Windows.Forms.Label carfeetext;
         private System.Windows.Forms.TextBox carfeetextbx;
         private System.Windows.Forms.TextBox nameforbill;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label bossdvd;
         private System.Windows.Forms.Label emplydvd;
         private System.Windows.Forms.Label remarkbill;
         private System.Windows.Forms.RichTextBox remarkbilltextbx;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.RichTextBox remarktextbox;
     }
 }

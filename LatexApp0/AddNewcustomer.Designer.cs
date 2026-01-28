@@ -113,6 +113,7 @@
             this.CarFee.TabIndex = 12;
             this.CarFee.Text = "ค่ารถ";
             this.CarFee.UseVisualStyleBackColor = true;
+            this.CarFee.CheckedChanged += new System.EventHandler(this.CarFee_CheckedChanged);
             // 
             // preferred_payment
             // 
