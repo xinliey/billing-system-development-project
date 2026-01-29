@@ -22,7 +22,7 @@ namespace LatexApp0
 
         string Transportfee;
         string bill;
-        int? unpaid ;
+        int? unpaid;
         string unpaidText;
         string remarkText;
         float divide;
@@ -35,6 +35,22 @@ namespace LatexApp0
         {
 
             InitializeComponent();
+            var printbill = new BillPrintModel
+            {
+                BillDate = DateTime.Now,
+                CustomerName = "",
+                TotalWeight = latexweight.Text,
+                BucketWeight = bucketweight.Text,
+                NetWeight = netweightforbill.Text,
+                Percentage = percentforbill.Text,
+                DryLatex = latexafterdry.Text,
+                Price = priceforbill.Text,
+                TotalPayment = totalforbill.Text
+
+
+            };
+            var printer = BillPrinterFactory.Create(printbill);
+            printer.Preview();
             GetUserList();
 
         }
@@ -96,7 +112,7 @@ namespace LatexApp0
         }
         private void save_latex_print_btn_Click(object sender, EventArgs e)
         {
-            SaveBillIntoDB(); //this one for printing actual bill 
+           PrintBill(); //this one for printing actual bill 
         }
         private void TextChangeRecalculation()
         {
@@ -127,14 +143,14 @@ namespace LatexApp0
                 {
                     carfeetextbx.Text = ((int)latex_afterdry).ToString();
                 }
-                
-              
+
+
                 DividingBill();
             }
         }
         private void DecidePrice(float percent)
         {
-           
+
             var prices = AppState.Instance.PercentPrices;
 
             if (prices.Count == 0)
@@ -172,8 +188,39 @@ namespace LatexApp0
             bossdivisionforbill.Text = boss.ToString("0");
             employeedivisionforbill.Text = employee.ToString("0");
 
-            
+
         }
+        private void PrintBill()
+        {
+            var printbill = new BillPrintModel
+            {
+                BillDate = DateTime.Now,
+                CustomerName = nameforbill.Text,
+                TotalWeight = latexweight.Text,
+                BucketWeight = bucketweight.Text,
+                NetWeight = netweightforbill.Text,
+                Percentage = percentforbill.Text,
+                DryLatex = latexafterdry.Text,
+                Price = priceforbill.Text,
+                TotalPayment = totalforbill.Text
+                
+
+            };
+           
+            if (bill == "100") //for no devision bill
+            { 
+                var printer = BillPrinterFactory.Create(printbill);
+                printer.Preview();//preview first dont print yet 
+            }
+            else
+            {
+                MessageBox.Show("under development for bill division");
+            }
+            
+           
+
+        }
+
         private void SaveBillIntoDB()
         {
             if (string.IsNullOrWhiteSpace(nameforbill.Text) ||
@@ -191,7 +238,7 @@ namespace LatexApp0
                "Password=131001;";
             string sql = @"INSERT INTO latexapp.client_percentage_record (Name, date, netweight, percentage)
             VALUES (@Name, @Date, @Netw, @Percent)
-            AS new ON DUPLICATE KEY UPDATE netweight  = new.netweight, percentage = new.percentage;" ;
+            AS new ON DUPLICATE KEY UPDATE netweight  = new.netweight, percentage = new.percentage;";
             string sql2 = "UPDATE client_data SET remark = @RemarkData " +
                 "WHERE Name = @Name; ";
 
@@ -221,21 +268,23 @@ namespace LatexApp0
                     cmd.ExecuteNonQuery();
                 }
             }
-           
-                MessageBox.Show("บันทึกข้อมูลสำเร็จ!");
 
-            
-                    latexweight.Clear();
-                    bucketweight.Clear();
-                    percentforbill.Clear();
-                    nameforbill.Clear();
-                    remarktextbox.Clear();
-                    remarkbilltextbx.Clear();
-                    percentrecorddisplay.Clear();
-                
 
-            
+
+            MessageBox.Show("บันทึกข้อมูลสำเร็จ!");
+
+
+            latexweight.Clear();
+            bucketweight.Clear();
+            percentforbill.Clear();
+            nameforbill.Clear();
+            remarktextbox.Clear();
+            remarkbilltextbx.Clear();
+            percentrecorddisplay.Clear();
+
+
         }
+    
 
         private void nameforbill_TextChanged(object sender, EventArgs e)
         {

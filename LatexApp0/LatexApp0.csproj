@@ -98,6 +98,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppState.cs" />
+    <Compile Include="BillPrinter.cs" />
+    <Compile Include="BillPrinterFactory.cs" />
+    <Compile Include="BillPrintModel.cs" />
     <Compile Include="EditCustomerUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
