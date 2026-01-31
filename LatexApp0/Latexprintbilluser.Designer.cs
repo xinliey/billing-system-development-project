@@ -61,6 +61,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.remarktextbox = new System.Windows.Forms.RichTextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -252,7 +254,7 @@
             // 
             this.percentrecorddisplay.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.percentrecorddisplay.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.percentrecorddisplay.Location = new System.Drawing.Point(611, 166);
+            this.percentrecorddisplay.Location = new System.Drawing.Point(611, 71);
             this.percentrecorddisplay.Name = "percentrecorddisplay";
             this.percentrecorddisplay.Size = new System.Drawing.Size(322, 317);
             this.percentrecorddisplay.TabIndex = 20;
@@ -301,7 +303,7 @@
             this.nameforbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameforbill.Location = new System.Drawing.Point(188, 27);
             this.nameforbill.Name = "nameforbill";
-            this.nameforbill.Size = new System.Drawing.Size(450, 41);
+            this.nameforbill.Size = new System.Drawing.Size(349, 41);
             this.nameforbill.TabIndex = 25;
             this.nameforbill.TextChanged += new System.EventHandler(this.nameforbill_TextChanged);
             // 
@@ -339,7 +341,7 @@
             // 
             this.remarkbill.AutoSize = true;
             this.remarkbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.remarkbill.Location = new System.Drawing.Point(605, 491);
+            this.remarkbill.Location = new System.Drawing.Point(605, 415);
             this.remarkbill.Name = "remarkbill";
             this.remarkbill.Size = new System.Drawing.Size(66, 36);
             this.remarkbill.TabIndex = 30;
@@ -351,7 +353,7 @@
             this.remarkbilltextbx.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.remarkbilltextbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remarkbilltextbx.ForeColor = System.Drawing.Color.Red;
-            this.remarkbilltextbx.Location = new System.Drawing.Point(611, 533);
+            this.remarkbilltextbx.Location = new System.Drawing.Point(611, 454);
             this.remarkbilltextbx.Name = "remarkbilltextbx";
             this.remarkbilltextbx.Size = new System.Drawing.Size(322, 88);
             this.remarkbilltextbx.TabIndex = 31;
@@ -361,7 +363,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(605, 121);
+            this.label8.Location = new System.Drawing.Point(605, 32);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(205, 36);
             this.label8.TabIndex = 32;
@@ -371,7 +373,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(605, 639);
+            this.label9.Location = new System.Drawing.Point(605, 697);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(125, 36);
             this.label9.TabIndex = 33;
@@ -383,16 +385,40 @@
             this.remarktextbox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.remarktextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remarktextbox.ForeColor = System.Drawing.Color.Red;
-            this.remarktextbox.Location = new System.Drawing.Point(611, 678);
+            this.remarktextbox.Location = new System.Drawing.Point(611, 736);
             this.remarktextbox.Name = "remarktextbox";
-            this.remarktextbox.Size = new System.Drawing.Size(322, 116);
+            this.remarktextbox.Size = new System.Drawing.Size(322, 58);
             this.remarktextbox.TabIndex = 34;
             this.remarktextbox.Text = "";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(623, 556);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(84, 29);
+            this.label12.TabIndex = 35;
+            this.label12.Text = "หัก/เบิก";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.Red;
+            this.richTextBox1.Location = new System.Drawing.Point(718, 554);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(215, 44);
+            this.richTextBox1.TabIndex = 36;
+            this.richTextBox1.Text = "";
             // 
             // Latexprintbilluser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.remarktextbox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -467,5 +493,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.RichTextBox remarktextbox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
