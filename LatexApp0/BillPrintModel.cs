@@ -19,8 +19,10 @@ namespace LatexApp0
             
             public string Price { get; set; }
             public string TransportFee { get; set; }
-            
-            public string TotalPayment { get; set; }
+        public string boss { get; set; }
+        public string employee { get; set; }
+            public string total { get; set; }//normal total without carfee
+            public string TotalPayment { get; set; }//include car fee 
         
 
     }

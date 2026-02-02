@@ -21,6 +21,7 @@ namespace LatexApp0
     {
 
         string Transportfee;
+        int carfee;
         string bill;
         int? unpaid;
         string unpaidText;
@@ -31,6 +32,7 @@ namespace LatexApp0
         float total;
         bool CarFeePay;
         int netweight;
+        int paymentwithcarfee;
         public Latexprintbilluser()
         {
 
@@ -96,9 +98,9 @@ namespace LatexApp0
             SaveBillIntoDB(); //this one for percentage record
         }
         private void save_latex_print_btn_Click(object sender, EventArgs e)
-        {
+        { PrintBill(); //this one for printing actual bill 
             SaveBillIntoDB(); ;
-            PrintBill(); //this one for printing actual bill 
+           
         }
         private void TextChangeRecalculation()
         {
@@ -128,6 +130,8 @@ namespace LatexApp0
                 if (CarFeePay == true)
                 {
                     carfeetextbx.Text = ((int)latex_afterdry).ToString();
+                    carfee = (int)latex_afterdry;
+                    paymentwithcarfee = (int)total + carfee;
                 }
 
 
@@ -178,31 +182,55 @@ namespace LatexApp0
         }
         private void PrintBill()
         {
-            var printbill = new BillPrintModel
-            {
-                BillDate = DateTime.Now,
-                CustomerName = nameforbill.Text,
-                TotalWeight = latexweight.Text,
-                BucketWeight = bucketweight.Text,
-                NetWeight = netweightforbill.Text,
-                Percentage = percentforbill.Text,
-                DryLatex = latexafterdry.Text,
-                Price = priceforbill.Text,
-                TotalPayment = totalforbill.Text
-
-
-            };
-
+            
             if (bill == "100") //for no devision bill
             {
+                var printbill = new BillPrintModel
+                {
+                    BillDate = DateTime.Now,
+                    CustomerName = nameforbill.Text,
+                    TotalWeight = latexweight.Text,
+                    BucketWeight = bucketweight.Text,
+                    NetWeight = netweightforbill.Text,
+                    Percentage = percentforbill.Text,
+                    DryLatex = latexafterdry.Text,
+                    Price = priceforbill.Text,
+                    TotalPayment = paymentwithcarfee.ToString(),
+                    TransportFee = carfeetextbx.Text,
+                    total = totalforbill.Text,
+                    boss = totalforbill.Text,
+               employee = "0"
+
+
+                };
+
                 var printer = BillPrinterFactory.Create(printbill);
                 printer.Preview();//preview first dont print yet 
             }
             else
             {
-                MessageBox.Show("under development for bill division");
-            }
+                var printbill = new BillPrintModel
+                {
+                    BillDate = DateTime.Now,
+                    CustomerName = nameforbill.Text,
+                    TotalWeight = latexweight.Text,
+                    BucketWeight = bucketweight.Text,
+                    NetWeight = netweightforbill.Text,
+                    Percentage = percentforbill.Text,
+                    DryLatex = latexafterdry.Text,
+                    Price = priceforbill.Text,
+                    TotalPayment = paymentwithcarfee.ToString(),
+                    TransportFee = carfeetextbx.Text,
+                    total = totalforbill.Text,
+                    boss = bossdivisionforbill.Text,
+                    employee = employeedivisionforbill.Text
 
+
+                };
+
+                var printer = BillPrinterFactory.Create(printbill);
+                printer.Preview();//preview first dont print yet 
+            }
 
 
         }
@@ -211,9 +239,25 @@ namespace LatexApp0
         {
             string finalremark = "";
 
-            if (!string.IsNullOrEmpty(richTextBox1.Text))
+            if (!string.IsNullOrWhiteSpace(richTextBox1.Text))
             {
-                finalremark = richTextBox1.Text; 
+                string text = richTextBox1.Text.Trim();
+                char firstChar = text[0];
+
+                if (firstChar == '-')
+                {
+                    finalremark = "หัก " + text.Substring(1).Trim();
+                }
+                else if (char.IsDigit(firstChar))
+                {
+                    finalremark = "เบิก " + text;
+                }
+                else
+                {
+                    // Optional: fallback if first char is something else
+                    finalremark = text;
+                }
+
                 UpdateUnpaidRemark();
             }
 
@@ -305,7 +349,7 @@ namespace LatexApp0
             remarktextbox.Clear();
             remarkbilltextbx.Clear();
             percentrecorddisplay.Clear();
-
+            richTextBox1.Clear();
 
         }
 
@@ -318,8 +362,9 @@ namespace LatexApp0
                 "Database=latexapp;" +
                 "User ID=root;" +
                 "Password=131001;";
-            string sql = "SELECT Transport_fee,Preferred_billing,unpaid" +
+            string sql = "SELECT Transport_fee,Preferred_billing,unpaid , remark" +
                 " FROM latexapp.client_data where Name=@Name;";
+           
             using (var conn = new MySqlConnection(connString))
             using (var cmd = new MySqlCommand(sql, conn))
             {
@@ -335,12 +380,14 @@ namespace LatexApp0
                         bill = reader["Preferred_billing"].ToString();
                         unpaid = ReadIntOrNull(reader, "unpaid");
                         unpaidText = unpaid.HasValue ? unpaid.Value.ToString() : "ไม่มี";
-
+                        remarkText = ReadStringOrNoData(reader, "remark");
 
                     }
 
                 }
-                if (unpaidText == "ไม่มี")
+
+                remarkbilltextbx.Clear();
+                if (unpaidText == "ไม่มี" || unpaidText == "0")
                 {
                     remarkbilltextbx.Clear();
 
@@ -349,10 +396,11 @@ namespace LatexApp0
                 {
                     remarkbill.Visible = true;
                     remarkbilltextbx.Visible = true;
-                    remarkbilltextbx.Clear();
-                    remarkbilltextbx.AppendText($"ยอดค้าง : {unpaidText},\n");
+                    //remarkbilltextbx.Clear();
+                    remarkbilltextbx.AppendText($"ยอดค้าง : {unpaidText}\n");
+
                 }
-                if (remarkText == "-")
+                if (remarkText == "" && unpaidText== "ไม่มี")
                 {
                     remarkbill.Visible = false;
                     remarkbilltextbx.Visible = false;
@@ -361,8 +409,9 @@ namespace LatexApp0
                 {
                     remarkbill.Visible = true;
                     remarkbilltextbx.Visible = true;
-                    remarkbilltextbx.Clear();
-                    remarkbilltextbx.AppendText($"{remarkText}\n");
+                    //remarkbilltextbx.Clear();
+
+                   remarkbilltextbx.AppendText($"{remarkText}\n");
                 }
 
                 DefineDvd(bill);
@@ -507,11 +556,24 @@ namespace LatexApp0
             using (var conn = new MySqlConnection(connString))
             using (var cmd = new MySqlCommand(sql, conn))
             {
-                MessageBox.Show("trying to update unpaid");
+                //MessageBox.Show("trying to update unpaid");
                 cmd.Parameters.AddWithValue("@Name", nameforbill.Text);
                 cmd.Parameters.AddWithValue("@updateUnpaid",number);
                 conn.Open();
                 cmd.ExecuteNonQuery();
+            }
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (int.TryParse(unpaidText, out int unpaid) &&
+         int.TryParse(richTextBox1.Text.Trim(), out int input))
+            {
+                remain.Text = (unpaid - input).ToString();
+            }
+            else
+            {
+                remain.Text = "";
             }
         }
     }

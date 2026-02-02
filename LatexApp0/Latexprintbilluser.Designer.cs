@@ -63,6 +63,8 @@
             this.remarktextbox = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.remain = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -119,7 +121,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(19, 489);
+            this.label7.Location = new System.Drawing.Point(19, 506);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(109, 36);
             this.label7.TabIndex = 6;
@@ -194,7 +196,7 @@
             // 
             this.totalforbill.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.totalforbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalforbill.Location = new System.Drawing.Point(188, 486);
+            this.totalforbill.Location = new System.Drawing.Point(188, 503);
             this.totalforbill.Name = "totalforbill";
             this.totalforbill.Size = new System.Drawing.Size(349, 41);
             this.totalforbill.TabIndex = 14;
@@ -205,7 +207,7 @@
             this.bossdivisionforbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bossdivisionforbill.Location = new System.Drawing.Point(188, 652);
             this.bossdivisionforbill.Name = "bossdivisionforbill";
-            this.bossdivisionforbill.Size = new System.Drawing.Size(241, 41);
+            this.bossdivisionforbill.Size = new System.Drawing.Size(130, 41);
             this.bossdivisionforbill.TabIndex = 15;
             // 
             // employeedivisionforbill
@@ -283,7 +285,7 @@
             // 
             this.carfeetext.AutoSize = true;
             this.carfeetext.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carfeetext.Location = new System.Drawing.Point(19, 547);
+            this.carfeetext.Location = new System.Drawing.Point(337, 655);
             this.carfeetext.Name = "carfeetext";
             this.carfeetext.Size = new System.Drawing.Size(76, 36);
             this.carfeetext.TabIndex = 23;
@@ -293,9 +295,9 @@
             // 
             this.carfeetextbx.BackColor = System.Drawing.SystemColors.Control;
             this.carfeetextbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.carfeetextbx.Location = new System.Drawing.Point(188, 547);
+            this.carfeetextbx.Location = new System.Drawing.Point(425, 656);
             this.carfeetextbx.Name = "carfeetextbx";
-            this.carfeetextbx.Size = new System.Drawing.Size(140, 38);
+            this.carfeetextbx.Size = new System.Drawing.Size(100, 38);
             this.carfeetextbx.TabIndex = 24;
             // 
             // nameforbill
@@ -407,16 +409,39 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.Red;
-            this.richTextBox1.Location = new System.Drawing.Point(718, 554);
+            this.richTextBox1.Location = new System.Drawing.Point(713, 548);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(215, 44);
+            this.richTextBox1.Size = new System.Drawing.Size(215, 42);
             this.richTextBox1.TabIndex = 36;
             this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
+            // remain
+            // 
+            this.remain.AutoSize = true;
+            this.remain.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.remain.ForeColor = System.Drawing.Color.Red;
+            this.remain.Location = new System.Drawing.Point(799, 601);
+            this.remain.Name = "remain";
+            this.remain.Size = new System.Drawing.Size(0, 29);
+            this.remain.TabIndex = 37;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(708, 601);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(85, 29);
+            this.label13.TabIndex = 38;
+            this.label13.Text = "คงเหลือ";
             // 
             // Latexprintbilluser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.remain);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.remarktextbox);
@@ -495,5 +520,7 @@
         private System.Windows.Forms.RichTextBox remarktextbox;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Label remain;
+        private System.Windows.Forms.Label label13;
     }
 }
