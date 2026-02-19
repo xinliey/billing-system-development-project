@@ -344,12 +344,12 @@
             // 
             // reportremark
             // 
-            this.reportremark.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reportremark.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportremark.Location = new System.Drawing.Point(11, 147);
             this.reportremark.Name = "reportremark";
             this.reportremark.Size = new System.Drawing.Size(591, 867);
             this.reportremark.TabIndex = 12;
-            this.reportremark.Text = "สวัสดี";
+            this.reportremark.Text = "";
             // 
             // MainReportPanel
             // 

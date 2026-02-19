@@ -29,6 +29,7 @@ namespace LatexApp0
             edit = new EditCustomerUserControl();
             LoadPage(ReportTab); //initialize tab
             
+            
         }
 
         private void รวมบลToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,6 +76,11 @@ namespace LatexApp0
         private void แกไขขอมลToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LoadPage(edit);
+        }
+
+        private void RemarkRichText()
+        {
+
         }
     }
 }

@@ -54,11 +54,11 @@
             this.รายงานToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.รวมบลToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.เพมลกคาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.เพมลกคาToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.แกไขขอมลToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.คนหาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ขอมลลกคาToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ประวตบลToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.เพมลกคาToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.แกไขขอมลToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportPanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -120,6 +120,7 @@
             this.reportremark.Size = new System.Drawing.Size(591, 867);
             this.reportremark.TabIndex = 12;
             this.reportremark.Text = "สวัสดี";
+            //this.reportremark.TextChanged += new System.EventHandler(this.reportremark_TextChanged);
             // 
             // ReportPanel
             // 
@@ -334,6 +335,20 @@
             this.เพมลกคาToolStripMenuItem.Text = "ลูกค้า";
             this.เพมลกคาToolStripMenuItem.Click += new System.EventHandler(this.เพมลกคาToolStripMenuItem_Click);
             // 
+            // เพมลกคาToolStripMenuItem1
+            // 
+            this.เพมลกคาToolStripMenuItem1.Name = "เพมลกคาToolStripMenuItem1";
+            this.เพมลกคาToolStripMenuItem1.Size = new System.Drawing.Size(229, 42);
+            this.เพมลกคาToolStripMenuItem1.Text = "เพิ่มลูกค้า";
+            this.เพมลกคาToolStripMenuItem1.Click += new System.EventHandler(this.เพมลกคาToolStripMenuItem1_Click);
+            // 
+            // แกไขขอมลToolStripMenuItem
+            // 
+            this.แกไขขอมลToolStripMenuItem.Name = "แกไขขอมลToolStripMenuItem";
+            this.แกไขขอมลToolStripMenuItem.Size = new System.Drawing.Size(229, 42);
+            this.แกไขขอมลToolStripMenuItem.Text = "แก้ไขข้อมูล";
+            this.แกไขขอมลToolStripMenuItem.Click += new System.EventHandler(this.แกไขขอมลToolStripMenuItem_Click);
+            // 
             // คนหาToolStripMenuItem
             // 
             this.คนหาToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -348,7 +363,7 @@
             // 
             this.ขอมลลกคาToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ขอมลลกคาToolStripMenuItem.Name = "ขอมลลกคาToolStripMenuItem";
-            this.ขอมลลกคาToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.ขอมลลกคาToolStripMenuItem.Size = new System.Drawing.Size(205, 36);
             this.ขอมลลกคาToolStripMenuItem.Text = "ข้อมูลลูกค้า";
             this.ขอมลลกคาToolStripMenuItem.Click += new System.EventHandler(this.ขอมลลกคาToolStripMenuItem_Click);
             // 
@@ -356,23 +371,9 @@
             // 
             this.ประวตบลToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ประวตบลToolStripMenuItem.Name = "ประวตบลToolStripMenuItem";
-            this.ประวตบลToolStripMenuItem.Size = new System.Drawing.Size(224, 36);
+            this.ประวตบลToolStripMenuItem.Size = new System.Drawing.Size(205, 36);
             this.ประวตบลToolStripMenuItem.Text = "ประวัติบิล";
             this.ประวตบลToolStripMenuItem.Click += new System.EventHandler(this.ประวตบลToolStripMenuItem_Click);
-            // 
-            // เพมลกคาToolStripMenuItem1
-            // 
-            this.เพมลกคาToolStripMenuItem1.Name = "เพมลกคาToolStripMenuItem1";
-            this.เพมลกคาToolStripMenuItem1.Size = new System.Drawing.Size(229, 42);
-            this.เพมลกคาToolStripMenuItem1.Text = "เพิ่มลูกค้า";
-            this.เพมลกคาToolStripMenuItem1.Click += new System.EventHandler(this.เพมลกคาToolStripMenuItem1_Click);
-            // 
-            // แกไขขอมลToolStripMenuItem
-            // 
-            this.แกไขขอมลToolStripMenuItem.Name = "แกไขขอมลToolStripMenuItem";
-            this.แกไขขอมลToolStripMenuItem.Size = new System.Drawing.Size(229, 42);
-            this.แกไขขอมลToolStripMenuItem.Text = "แก้ไขข้อมูล";
-            this.แกไขขอมลToolStripMenuItem.Click += new System.EventHandler(this.แกไขขอมลToolStripMenuItem_Click);
             // 
             // reportForm
             // 

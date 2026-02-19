@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Mysqlx.Crud;
+using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace LatexApp0
 {
@@ -17,6 +22,7 @@ namespace LatexApp0
         public MainReportPanel()
         {
             InitializeComponent();
+            reportdatadisplay();
             
         }
         private void initialprice_KeyPress(object sender, KeyPressEventArgs e)
@@ -67,7 +73,56 @@ namespace LatexApp0
           
         }
 
+        private void reportdatadisplay()
+        {
+            reportremark.AppendText("เข้ารอบวันนี้\n\n");
+            string connString =
+        "Server=localhost;" +
+         "Database=latexapp;" +
+        "User ID=root;" +
+        "Password=131001;";
+            string sql =
+        "SELECT Name\n"+
+        "FROM(\n"+
+        "SELECT dd.Name,COUNT(*) AS streak_len\n" +
+        "FROM( SELECT Name ,date," +
+        "DATE_SUB(date, INTERVAL ROW_NUMBER() OVER(PARTITION BY Name ORDER BY date) DAY) AS grp\n" +
+        "FROM latexapp.daily_data\n" +
+        ") dd\n" +
+        "JOIN latexapp.client_data cd\n" +
+        "ON cd.name = dd.Name\n" +
+        "WHERE cd.bigcustomer = 1\n" +
+        "GROUP BY dd.Name, grp\n" +
+        ") t\n" +
+        "WHERE streak_len >= 2;";
 
+
+            using (var conn = new MySqlConnection(connString))
+            using (var cmd = new MySqlCommand(sql, conn))
+            {
+               
+
+                conn.Open();
+
+                using (var reader = cmd.ExecuteReader())
+                {
+
+                    while (reader.Read())
+                    {// Client info (same for every row)
+
+                        string name = reader["Name"].ToString();
+                        
+
+                        DisplayRestDay(name);
+
+                    }
+                }
+            }
+        }
+        private void DisplayRestDay(string name)
+        {
+           reportremark.AppendText($"{name}\n");
+        }
     }
     
 }
