@@ -157,6 +157,12 @@
     <Compile Include="Latexprintbilluser.Designer.cs">
       <DependentUpon>Latexprintbilluser.cs</DependentUpon>
     </Compile>
+    <Compile Include="TodayBillRecord.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TodayBillRecord.Designer.cs">
+      <DependentUpon>TodayBillRecord.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="EditCustomerUserControl.resx">
       <DependentUpon>EditCustomerUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -192,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Latexprintbilluser.resx">
       <DependentUpon>Latexprintbilluser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TodayBillRecord.resx">
+      <DependentUpon>TodayBillRecord.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

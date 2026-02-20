@@ -37,7 +37,7 @@ namespace LatexApp0
         {
 
             InitializeComponent();
-
+            ResetPage();
             GetUserList();
 
         }
@@ -273,56 +273,72 @@ namespace LatexApp0
             }
             //after pressing save button , the panel will be refreshed 
             //more convenient for user to move to next bill
-            
+
             string connString =
                "Server=localhost;" +
                "Database=latexapp;" +
                "User ID=root;" +
                "Password=131001;";
-            string sql = @"INSERT INTO latexapp.client_percentage_record (Name, date, netweight, percentage)
-            VALUES (@Name, @Date, @Netw, @Percent)
-            AS new ON DUPLICATE KEY UPDATE netweight  = new.netweight, percentage = new.percentage;";
+            string sql = @"INSERT INTO latexapp.daily_data (Name, date, bucket_weight,net_weight, percentage,cost , TransportFee)
+            VALUES (@Name,@Date, @bucket, @Netw, @Percent,@cost, @carfee)
+            AS new ON DUPLICATE KEY UPDATE net_weight  = new.net_weight, percentage = new.percentage;";
             string sql1 = @"INSERT INTO latexapp.client_percentage_record (Name, date, netweight, percentage,remark1)
             VALUES (@Name, @Date, @Netw, @Percent,@remark1)
+            
             AS new ON DUPLICATE KEY UPDATE netweight  = new.netweight, percentage = new.percentage ,remark1 = new.remark1;;";
+
             string sql2 = "UPDATE client_data SET remark = @RemarkData " +
                 "WHERE Name = @Name; ";
 
 
+            //update client percent record 
             using (var conn = new MySqlConnection(connString))
-                if (finalremark!="")//if one of the remark is not null , update remark in record
+
+            using (var cmd = new MySqlCommand(sql1, conn))
+            {
+                cmd.Parameters.AddWithValue("@Name", nameforbill.Text);
+                cmd.Parameters.AddWithValue("@Date", DateTime.Today);
+                cmd.Parameters.AddWithValue("@Netw", netweight);
+
+                cmd.Parameters.AddWithValue("@Percent", percentforbill.Text);
+                if (finalremark != "")//if one of the remark is not null , update remark in record
                 {
-                    using (var cmd = new MySqlCommand(sql1, conn)) 
-                    {
-                        cmd.Parameters.AddWithValue("@Name", nameforbill.Text);
-                        cmd.Parameters.AddWithValue("@Date", DateTime.Today);
-                        cmd.Parameters.AddWithValue("@Netw", netweight);
-
-                        cmd.Parameters.AddWithValue("@Percent", percentforbill.Text);
-                        cmd.Parameters.AddWithValue("@remark1", finalremark);
-
-                         
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                    }
-
+                    cmd.Parameters.AddWithValue("@remark1", finalremark);
                 }
-                else //if null , leave the remark in record the same way no chage 
+                else
                 {
-                    using (var cmd = new MySqlCommand(sql, conn))
-                    {
-                        cmd.Parameters.AddWithValue("@Name", nameforbill.Text);
-                        cmd.Parameters.AddWithValue("@Date", DateTime.Today);
-                        cmd.Parameters.AddWithValue("@Netw", netweight);
-
-                        cmd.Parameters.AddWithValue("@Percent", percentforbill.Text);
-                        
-
-
-                        conn.Open();
-                        cmd.ExecuteNonQuery();
-                    }
+                    cmd.Parameters.AddWithValue("@remark1", "");
                 }
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            //update daily_data
+            using (var conn = new MySqlConnection(connString))
+            using (var cmd = new MySqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@Name", nameforbill.Text);
+                cmd.Parameters.AddWithValue("@Date", DateTime.Today);
+                cmd.Parameters.AddWithValue("@bucket", bucketweight.Text);
+                cmd.Parameters.AddWithValue("@Netw", netweight);
+
+                cmd.Parameters.AddWithValue("@Percent", percentforbill.Text);
+                cmd.Parameters.AddWithValue("@cost", totalforbill.Text);
+                if (carfeetextbx.Text != null)
+                {
+                    cmd.Parameters.AddWithValue("@carfee", carfeetextbx.Text);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@carfee", "0");
+                }
+
+
+
+                conn.Open();
+                cmd.ExecuteNonQuery();
+
+            }
             if (finalremark != "") //if remark is not empty , update client data too
             {
                 
@@ -341,6 +357,12 @@ namespace LatexApp0
       
             MessageBox.Show("บันทึกข้อมูลสำเร็จ!");
 
+            ResetPage();
+
+        }
+
+        private void ResetPage()
+        {
 
             latexweight.Clear();
             bucketweight.Clear();
@@ -350,13 +372,13 @@ namespace LatexApp0
             remarkbilltextbx.Clear();
             percentrecorddisplay.Clear();
             richTextBox1.Clear();
-
+            percentrecorddisplay.Clear();
+            finalmoney.Visible = false;
+            deductfinal.Visible = false;
         }
-
-
         private void nameforbill_TextChanged(object sender, EventArgs e)
         {
-
+            percentrecorddisplay.Clear();
             string connString =
                 "Server=localhost;" +
                 "Database=latexapp;" +
@@ -365,6 +387,7 @@ namespace LatexApp0
             string sql = "SELECT Transport_fee,Preferred_billing,unpaid , remark" +
                 " FROM latexapp.client_data where Name=@Name;";
            
+            
             using (var conn = new MySqlConnection(connString))
             using (var cmd = new MySqlCommand(sql, conn))
             {
@@ -381,7 +404,7 @@ namespace LatexApp0
                         unpaid = ReadIntOrNull(reader, "unpaid");
                         unpaidText = unpaid.HasValue ? unpaid.Value.ToString() : "ไม่มี";
                         remarkText = ReadStringOrNoData(reader, "remark");
-
+                        
                     }
 
                 }
@@ -416,6 +439,7 @@ namespace LatexApp0
 
                 DefineDvd(bill);
                 DisplayRecord(nameforbill.Text);
+                CheckExistingData(nameforbill.Text);
                 if (Transportfee == "1")
                 {
                     CarFeePay = true;
@@ -433,7 +457,48 @@ namespace LatexApp0
             }
 
         }
-        private void DisplayRecord(String name)
+        private void CheckExistingData(string name) //in case user want to edit the bill of existing client today
+        {
+            string bucket="";
+            string net="";
+            string percent="";
+            string connString =
+               "Server=localhost;" +
+               "Database=latexapp;" +
+               "User ID=root;" +
+               "Password=131001;";
+            string sql = "SELECT bucket_weight , net_weight, percentage" +
+                " FROM latexapp.daily_data " +
+                "WHERE Name = @Name AND `date` = @date; ";
+            using (var conn = new MySqlConnection(connString))
+            using (var cmd = new MySqlCommand(sql, conn))
+            {
+                cmd.Parameters.AddWithValue("@Name", name.Trim());
+                cmd.Parameters.AddWithValue("@date", DateTime.Today);
+                conn.Open();
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        
+                       bucket = reader["bucket_weight"].ToString();
+                       net = reader["net_weight"].ToString();
+                       percent = reader["percentage"].ToString();
+                        
+                    }
+                }
+                
+            }
+            float.TryParse(bucket, out float bucketfloat);
+                        float.TryParse(net, out float netfloat);
+                         latexweight.Text = (bucketfloat + netfloat).ToString();
+            bucketweight.Text = bucket;
+            netweightforbill.Text = net;
+            percentforbill.Text = percent;
+
+        }
+        private void DisplayRecord(String name) //display history record of percentage
         {
             string connString =
                "Server=localhost;" +
@@ -570,11 +635,23 @@ namespace LatexApp0
          int.TryParse(richTextBox1.Text.Trim(), out int input))
             {
                 remain.Text = (unpaid - input).ToString();
+                deductfinal.Text = input.ToString();
+                int.TryParse(employeedivisionforbill.Text, out int employeemoney);
+
+                finalmoney.Text = "คงเหลือ :"+(employeemoney + input).ToString() ;
             }
             else
             {
                 remain.Text = "";
+                finalmoney.Visible = false;
+                deductfinal.Visible = false;
+
             }
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

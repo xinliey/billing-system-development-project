@@ -65,6 +65,8 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.remain = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
+            this.deductfinal = new System.Windows.Forms.Label();
+            this.finalmoney = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -216,7 +218,7 @@
             this.employeedivisionforbill.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeedivisionforbill.Location = new System.Drawing.Point(188, 727);
             this.employeedivisionforbill.Name = "employeedivisionforbill";
-            this.employeedivisionforbill.Size = new System.Drawing.Size(241, 41);
+            this.employeedivisionforbill.Size = new System.Drawing.Size(130, 41);
             this.employeedivisionforbill.TabIndex = 16;
             // 
             // save_latex_btn
@@ -397,11 +399,11 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(623, 556);
+            this.label12.Location = new System.Drawing.Point(606, 561);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 29);
+            this.label12.Size = new System.Drawing.Size(131, 29);
             this.label12.TabIndex = 35;
-            this.label12.Text = "หัก/เบิก";
+            this.label12.Text = "หัก(-)เบิก(+)";
             // 
             // richTextBox1
             // 
@@ -409,9 +411,9 @@
             this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.ForeColor = System.Drawing.Color.Red;
-            this.richTextBox1.Location = new System.Drawing.Point(713, 548);
+            this.richTextBox1.Location = new System.Drawing.Point(743, 548);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(215, 42);
+            this.richTextBox1.Size = new System.Drawing.Size(191, 42);
             this.richTextBox1.TabIndex = 36;
             this.richTextBox1.Text = "";
             this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
@@ -421,7 +423,7 @@
             this.remain.AutoSize = true;
             this.remain.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remain.ForeColor = System.Drawing.Color.Red;
-            this.remain.Location = new System.Drawing.Point(799, 601);
+            this.remain.Location = new System.Drawing.Point(833, 605);
             this.remain.Name = "remain";
             this.remain.Size = new System.Drawing.Size(0, 29);
             this.remain.TabIndex = 37;
@@ -430,16 +432,39 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(708, 601);
+            this.label13.Location = new System.Drawing.Point(741, 605);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(85, 29);
+            this.label13.Size = new System.Drawing.Size(69, 29);
             this.label13.TabIndex = 38;
-            this.label13.Text = "คงเหลือ";
+            this.label13.Text = "คงค้าง";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // deductfinal
+            // 
+            this.deductfinal.AutoSize = true;
+            this.deductfinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deductfinal.ForeColor = System.Drawing.Color.Red;
+            this.deductfinal.Location = new System.Drawing.Point(250, 771);
+            this.deductfinal.Name = "deductfinal";
+            this.deductfinal.Size = new System.Drawing.Size(68, 29);
+            this.deductfinal.TabIndex = 39;
+            this.deductfinal.Text = "--200";
+            // 
+            // finalmoney
+            // 
+            this.finalmoney.AutoSize = true;
+            this.finalmoney.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finalmoney.Location = new System.Drawing.Point(340, 736);
+            this.finalmoney.Name = "finalmoney";
+            this.finalmoney.Size = new System.Drawing.Size(0, 32);
+            this.finalmoney.TabIndex = 40;
             // 
             // Latexprintbilluser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.finalmoney);
+            this.Controls.Add(this.deductfinal);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.remain);
             this.Controls.Add(this.richTextBox1);
@@ -522,5 +547,7 @@
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label remain;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label deductfinal;
+        private System.Windows.Forms.Label finalmoney;
     }
 }

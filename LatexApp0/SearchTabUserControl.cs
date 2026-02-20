@@ -23,6 +23,7 @@ namespace LatexApp0
 
         private void button1_Click(object sender, EventArgs e)
         {
+           
             string connString =
            "Server=localhost;" +
             "Database=latexapp;" +
@@ -35,8 +36,9 @@ namespace LatexApp0
                 " FROM latexapp.client_data cd " +
                 "LEFT JOIN latexapp.client_percentage_record cpr " +
                 "ON cd.Name = cpr.Name " +
-                "WHERE cd.Name = @Name  " +
                 " AND cpr.date >= CURDATE() - INTERVAL 7 DAY "+
+                "WHERE cd.Name = @Name  " +
+                
                 "ORDER BY cpr.date DESC;";
 
             using (var conn = new MySqlConnection(connString))
